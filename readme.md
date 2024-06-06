@@ -1,6 +1,7 @@
 # QuickNvim
 
 Welcome to QuickNvim, also known as QNvim for easier pronunciation.
+
 ![image](https://github.com/to-codando/quicknvim/assets/94268593/5cbcadf9-5def-49bc-bd02-658fd0cb6298)
 
 
