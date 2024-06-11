@@ -1,6 +1,5 @@
 config = function()
 	require("trouble").setup({
-		-- Configurações opcionais
 		icons = true,
 		fold_open = "",
 		fold_closed = "",
@@ -11,24 +10,13 @@ config = function()
 			information = "",
 		},
 		use_diagnostic_signs = true,
-		--use_lsp_diagnostic_signs = true, -- Use os símbolos de diagnóstico do LSP
-		use_icons = true, -- Use ícones personalizados
-		mode = "quickfix", -- Modo de exibição padrão
-		theme = "catppuccin", -- Tema Catppuccino
-		modes = {
-			preview_float = {
-				mode = "quickfix",
-				preview = {
-					type = "float",
-					relative = "editor",
-					border = "rounded",
-					title = "Preview",
-					title_pos = "center",
-					position = { 0, -2 },
-					size = { width = 0.3, height = 0.3 },
-					zindex = 200,
-				},
-			},
-		},
+		use_icons = true,
+		mode = "float", -- Alterar o modo para "float" para exibir janelas flutuantes
+		theme = "catppuccin",
+		auto_open = "hover", -- Abra automaticamente o painel do Trouble ao pairar sobre um erro
+		auto_close = "hover", -- Feche automaticamente o painel do Trouble ao pairar sobre um erro
+		auto_preview = true, -- Mostre a visualização automática dos problemas ao pairar sobre eles
+		auto_focus = true, -- Dê foco automaticamente ao Trouble ao abrir
+		use_lsp_diagnostic_signs = true, -- Use os sinais de diagnóstico LSP para exibição dos problemas
 	})
 end
