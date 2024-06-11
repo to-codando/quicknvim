@@ -3,11 +3,9 @@ return function()
 
 	require("typescript-tools").setup({
 		on_attach = function(client, bufnr)
-			-- Desabilitar a capacidade de formatação do tsserver para garantir que o ALE fará a formatação
-			if client.name == "tsserver" then
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentRangeFormattingProvider = false
-			end
+			-- Desabilitar a capacidade de linting e formatação do typescript-tools
+			client.resolved_capabilities.document_formatting = false
+			client.resolved_capabilities.document_range_formatting = false
 
 			-- Configuração dos keymaps para LSP
 			require("keymaps").lsp_keymaps(client, bufnr)
