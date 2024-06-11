@@ -1,13 +1,15 @@
 return function()
 	-- Configurações de linters e fixers por tipo de arquivo
 	vim.g.ale_linters = {
-		javascript = { "standard" },
-		typescript = { "ts-standard" },
-		javascriptreact = { "standard" },
-		typescriptreact = { "ts-standard" },
+		javascript = { "eslint" },
+		typescript = { "eslint" },
+		javascriptreact = { "eslint" },
+		typescriptreact = { "eslint" },
 		css = { "stylelint" },
 		scss = { "stylelint" },
 		sass = { "stylelint" },
+		html = { "htmlhint" },
+		lua = { "stylua" },
 	}
 
 	vim.g.ale_fixers = {
@@ -15,10 +17,11 @@ return function()
 		typescript = { "prettier" },
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
+		css = { "stylelint" },
+		scss = { "stylelint" },
+		sass = { "stylelint" },
+		html = { "prettier" },
 		lua = { "stylua" },
-		css = { "prettier" },
-		scss = { "prettier" },
-		sass = { "prettier" },
 	}
 
 	-- Configurações de ALE
@@ -28,7 +31,7 @@ return function()
 
 	vim.g.ale_fix_on_save = 1 -- Fixar erros ao salvar o arquivo
 	vim.g.ale_lint_on_save = 1 -- Lintar arquivos ao salvar
-	vim.g.ale_lint_on_text_changed = "never" -- Não lintar ao digitar, apenas ao salvar
+	vim.g.ale_lint_on_text_changed = 1 -- Não lintar ao digitar, apenas ao salvar
 	vim.g.ale_completion_enabled = 0 -- Desativar a conclusão automática do ALE, usar LSP
 
 	-- Adicionar ícones de diagnóstico
